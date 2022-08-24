@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h2>
+        Create HTML Table Using JSON data in JavaScript:
+      </h2>
+      <div id='root'></div>
+    
+</body> 
+      
+
+<script>
+    const root = document.querySelector("#root")
+    async function jsonTable(){
+        const res = await fetch("table.json");
+        const users = await res.json();
+        users.forEach((user, index) => {
+            root.innerHTML += `<div class = 'card'>
+               <div class = 'id '>${user.id}</div> 
+               <div class = 'name '>${user.name}</div> 
+               <div class = 'title '>${user.username}</div> 
+               <div class = 'email '>${user.email}</div> 
+               <div class = 'street-address '>${user.address.street}</div> 
+               <div class = 'suite-address '>${user.address.suite}</div> 
+               <div class = 'city-address'>${user.address.city}</div> 
+               <div class = 'zipcode-address'>${user.address.zipcodes}</div> 
+               <div class = 'geo-lat'>${user.address.geo.lat}</div> 
+               <div class = 'geo-lang'>${user.address.geo.lng}</div> 
+               <div class = 'phone'>${user.phone}</div> 
+               <div class = 'website'>${user.website}</div> 
+               <div class = 'company-name'>${user.company.name}</div> 
+               <div class = 'company-catchPhrase text'>${user.company.catchPhrase}</div> 
+               <div class = 'company-bs text'>${user.company.bs}</div> 
+
+               </div>`;
+               
+            
+        });
+    }
+    
+jsonTable()
+
+</script>
