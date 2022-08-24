@@ -1,0 +1,32 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  }
+ #root{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  border: 5px solid rgb(202, 48, 74);
+  
+ 
+ }
+
+
+.card{
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  align-items: center;
+  align-content: flex-end;
+  background-color: pink;
+  border: 5px solid  rgb(202, 48, 74);
+
+}
+
+.text{
+  text-align: center;
+}
+
